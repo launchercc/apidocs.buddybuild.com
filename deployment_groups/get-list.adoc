@@ -96,16 +96,20 @@ $.ajax(settings).done(function (response) {
 [source,json]
 [
   {
-    "_id": "5a03360e460f821150c5559b",
-    "branches": [
-      "master",
-      "tag:feature"
-    ],
+    "_id": "5a0f364f801cf46366aa61a0",
     "name": "The Team",
     "prefixes": [
       {
+        "branch_only": true,
+        "tag_only": false,
         "name": "myprefix"
       }
+    ],
+    "tags": [
+      "feature"
+    ],
+    "branches": [
+      "master"
     ],
     "testers": [
       "\peter@buddybuild.com"
