@@ -30,6 +30,13 @@
         "desc": 'Deployment group identifier',
         "req":  true,
         "cue":  'Enter a deployment group id'
+      },
+      {
+        "name": ":deploy:",
+        "type": "boolean",
+        "desc": "Deploy the build to the testers you've added to the list",
+        "req": false,
+        "cue": 'Enter "true" to deploy the build to the testers you've added to the list.'
       }
     ],
     "query":  [],
