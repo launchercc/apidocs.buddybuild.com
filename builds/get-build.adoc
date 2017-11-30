@@ -144,7 +144,7 @@ $.ajax(settings).done(function (response) {
     "author": "David Pie",
     "commit_sha": "0b7eaf47fa20abddaca00ddec0d36f9be31a9ad0b7e7",
     "branch": "master",
-    "merge_status": "mergeable",
+    "merge_status": "unknown",
     "tags": []
   }
 }
