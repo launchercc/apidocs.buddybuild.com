@@ -5,7 +5,7 @@
 ----
 {
   "base":     "\https://api.buddybuild.com/v1",
-  "endpoint": "/:appID/deployment-group/:deploymentTargetID/deploy",
+  "endpoint": "/:appID:/deployment-group/:deploymentTargetID:/deploy",
   "method":   "post",
   "params": {
     "headers": [
