@@ -44,7 +44,7 @@
 [.definition.placeholder]
 Placeholder for the definition; auto-generated from JSON above.
 
-This method allows you to trigger a deploy of the latest build to a deployment group.
+This method deploys the latest build to a deployment group.
 
 [NOTE]
 ======
@@ -96,5 +96,7 @@ $.ajax(settings).done(function (response) {
 ----
 
 {% common %}
+
+Upon success, the HTTP response code is 204 (No Content).
 
 {% endmethod %}
