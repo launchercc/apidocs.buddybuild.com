@@ -1,12 +1,12 @@
-= Add testers to a deployment group
+= Deploy the latest build to a deployment group
 :linkattrs:
 
 [#endpoint]
 ----
 {
   "base":     "\https://api.buddybuild.com/v1",
-  "endpoint": "/apps/:app_id:/deployment-group/:deployment_group_id:/testers",
-  "method":   "put",
+  "endpoint": "/:appID:/deployment-group/:deploymentTargetID:/deploy",
+  "method":   "post",
   "params": {
     "headers": [
       {
@@ -31,24 +31,9 @@
         "req":  true,
         "cue":  'Enter a deployment group id'
       },
-      {
-        "name": ":deploy:",
-        "type": "boolean",
-        "desc": "Deploy the build to the testers you've added to the list",
-        "req": false,
-        "cue": 'Set to "true" to deploy the build to the testers you\'ve added to the list.'
-      }
     ],
     "query":  [],
-    "body":   [
-      {
-        "name": ":testers:",
-        "type": "string",
-        "desc": 'Comma-separated list of tester email addresses',
-        "req":  true,
-        "cue":  'Enter a comma-separated list of tester email addresses'
-      }
-    ]
+    "body":   []
   },
   "authentication": "required"
 }
@@ -59,9 +44,7 @@
 [.definition.placeholder]
 Placeholder for the definition; auto-generated from JSON above.
 
-Use this method to add testers to a deployment group for your app, using
-the `deployment_group_id` obtained from the link:get-list.adoc[List
-deployment groups] method. It accepts a list of emails in CSV format.
+This method deploys the latest build to a deployment group.
 
 [NOTE]
 ======
@@ -87,10 +70,10 @@ Placeholder for the endpoint parameters; auto-generated from JSON above.
 [role=copyme]
 .curl
 [source,bash]
-curl -X PUT \
+curl -X POST \
   -H 'Authorization: Bearer :api-access-token:' \
-  '\https://api.buddybuild.com/v1/apps/:app_id:/deployment-group/:deployment_group_id:/testers' \
-  --data-urlencode "testers=\peter@buddybuild.com,\amy@buddybuild.com"
+  '\https://api.buddybuild.com/v1/apps/:appID:/deployment-group/:deploymentTargetID:/deploy' \
+  --data-urlencode "branch=master"
 
 {% sample lang="jquery" %}
 
@@ -101,11 +84,8 @@ curl -X PUT \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "\https://api.buddybuild.com/v1/apps/:app_id:/deployment-group/:deployment_group_id:/testers",
-  "method": "PUT",
-  "data": {
-    "testers": "\peter@buddybuild.com,\amy@buddybuild.com"
-  },
+  "url": "\https://api.buddybuild.com/v1/apps/:appID:/deployment-group/:deploymentTargetID:/deploy",
+  "method": "POST",
   "headers": {
     "authorization": "Bearer :api-access-token:"
   }
@@ -114,5 +94,9 @@ $.ajax(settings).done(function (response) {
   console.log(response);
 });
 ----
+
+{% common %}
+
+Upon success, the HTTP response code is 204 (No Content).
 
 {% endmethod %}

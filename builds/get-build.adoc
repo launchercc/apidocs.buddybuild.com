@@ -45,7 +45,7 @@ link:post-trigger.adoc[Trigger a build] API, which returns a
 
 See also:
 
-* link:get-test_results.adoc[Show test results] 
+* link:get-test_results.adoc[Show test results]
 
 * link:get-coverage.adoc[Show code coverage]
 
@@ -137,6 +137,15 @@ $.ajax(settings).done(function (response) {
         "url": "\https://dashboard.buddybuild.com/download/ios?buildID=58b899061baced0100616172"
       }
     ]
+  },
+  "pull_request_destination_commit_info": {
+    "html_url": "https://github.com/myorg/2048/commit/54a9faeccc0979aaa16f3226562a24fb3330e9f0",
+    "message": "Change logo",
+    "author": "David Pie",
+    "commit_sha": "0b7eaf47fa20abddaca00ddec0d36f9be31a9ad0b7e7",
+    "branch": "master",
+    "merge_status": "unknown",
+    "tags": []
   }
 }
 

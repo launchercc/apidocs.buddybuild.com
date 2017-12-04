@@ -17,6 +17,7 @@
 .. link:deployment_groups/get-list.adoc[List deployment groups]
 .. link:deployment_groups/put-add_testers.adoc[Add testers]
 .. link:deployment_groups/delete-testers.adoc[Remove testers]
+.. link:deployment_groups/post-deploy.adoc[Deploy build to testers]
 
 . link:misc/README.adoc[Miscellaneous]
 .. link:misc/get-ip_ranges.adoc[List buddybuild IP address ranges]
