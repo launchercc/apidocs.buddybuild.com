@@ -1,0 +1,8 @@
+= Crash Reports
+
+This section covers the API methods for retrieving information about
+crash reports received for your app through the buddybuild SDK:
+
+- link:get-list.adoc[List crash reports]
+
+- link:get-logs.adoc[Show crash report logs]

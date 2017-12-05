@@ -1,0 +1,277 @@
+= List crash reports
+:linkattrs:
+
+[#endpoint]
+----
+{
+  "base":     "\https://api.buddybuild.com/v1",
+  "endpoint": "/apps/:app_id:/crash-report",
+  "method":   "get",
+  "params": {
+    "headers": [
+      {
+        "name": "Authorization",
+        "type": "Bearer :api-access-token:",
+        "req":  true,
+        "cue":  "Enter your API access token"
+      }
+    ],
+    "path":   [
+      {
+        "name": ":app_id:",
+        "type": "string",
+        "desc": 'App identifier',
+        "req":  true,
+        "cue":  'Enter an app id'
+      }
+    ],
+    "query":  [
+      {
+        "name": "pageSize",
+        "type": "number",
+        "desc": "Number of items to list (default: 10, max: 100)",
+        "req":  false,
+        "cue":  "Enter the number of items to list"
+      },
+      {
+        "name": "from",
+        "type": "string",
+        "desc": "Cursor used to list the next page of items",
+        "req":  false,
+        "cue":  "Enter a cursor identifier"
+      }
+    ],
+    "body":   []
+  },
+  "authentication": "required"
+}
+----
+
+== Definition
+
+[.definition.placeholder]
+Placeholder for the definition; auto-generated from JSON above.
+
+Use this method to retrieve a list of crash reports received for an app.
+
+This method is paginated. By default, 10 items are returned in the
+response. You can request up to 100 items at a time using the `pageSize`
+query parameter.
+
+[NOTE]
+======
+**Looking for your API access token?**
+
+Read more about link:../index.adoc#authentication[authenticating with
+buddybuild] or show
+link:https://dashboard.buddybuild.com/account/access-token[your personal
+access token^].
+======
+
+{% method %}
+
+== Parameters
+
+Required = [req]`*`
+
+[.parameters.placeholder]
+Placeholder for the endpoint parameters; auto-generated from JSON above.
+
+{% sample lang="curl" %}
+
+[role=copyme]
+.curl
+[source,bash]
+curl -X GET \
+  -H 'Authorization: Bearer :api-access-token:' \
+  '\https://api.buddybuild.com/v1/apps/:app_id:/crash-report'
+
+{% sample lang="jquery" %}
+
+[role=copyme]
+.jquery
+[source,js]
+----
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "\https://api.buddybuild.com/v1/apps/:app_id:/crash-report/",
+  "method": "GET",
+  "headers": {
+    "authorization": "Bearer :api-access-token:"
+  }
+}
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+----
+
+{% common %}
+
+.Response
+[source,json]
+{
+  "items": [
+    {
+      "_id": "12375e17f924de000123143d",
+      {
+          "items": [
+              {
+                  "_id": "5a271379ecdc42000148ed02",
+                  "instant_replay_url": "https://s3.amazonaws.com/buddybuild-instantreplays/d0e2a9e6-d212-45d2-b54a-96db7a68a820.mp4",
+                  "scheme": "m2048",
+                  "system": {
+                      "battery_fully_charged": false,
+                      "hardware_system_version": "11.1.2",
+                      "hardware_device_type_friendly": "iPhone X",
+                      "hardware_screen_width": 320,
+                      "device_plugged_into_power": false,
+                      "hardware_device_type": "iPhone10,6",
+                      "battery_charging": true,
+                      "app_uptime": 0.09316897392272949,
+                      "hardware_device_name": "John’s iPhone",
+                      "network_ssid": "",
+                      "hardware_screen_height": 568,
+                      "hardware_system_name": "iOS",
+                      "disk_free": 170235,
+                      "battery_level": 67,
+                      "network_wifi": true,
+                      "network_status": "Wifi",
+                      "network_ip": "192.168.32.116",
+                      "memory_free": 199,
+                      "network_3g": false,
+                      "battery_state_friendly": "Charging",
+                      "network_carrier": "",
+                      "cellular_connection": "",
+                      "memory_total": 2298,
+                      "disk_total": 244080,
+                      "hardware_device_model": "iPhone",
+                      "disk_used": 73845,
+                      "memory_used": 2099,
+                      "battery_state": 2
+                  },
+                  "CFBundleShortVersionString": "1.2",
+                  "CFBundleVersion": "113",
+                  "CFBundleIdentifier": "buddybuild.com.me.danqing.m2048",
+                  "app_id": "59135a067233a600012862eb",
+                  "build_number": 113,
+                  "build_id": "5a2710ccecdc42000148e7ed",
+                  "created_at": "2017-12-05T21:45:29.599Z",
+                  "identifier_for_vendor": "878E82E9-AFE9-4EAB-987A-970EE9F443D8",
+                  "tester_email": "ben.ng45@gmail.com",
+                  "resolved_crash_report": {
+                      "crashed_thread": "0",
+                      "exception_codes": "#0 at 0x182e89014",
+                      "exception_type": "SIGABRT",
+                      "datetime": "2017-05-10T18:45:49.000Z",
+                      "code_type": "ARM-64",
+                      "version": "1.2 (4)",
+                      "identifier": "buddybuild.com.me.danqing.m2048",
+                      "process": "m2048",
+                      "crash_type": "native",
+                      "thread_frames": [
+                          {
+                              "frames": [
+                                  {
+                                      "process_frame": false,
+                                      "offset": "8",
+                                      "function": "__pthread_kill",
+                                      "address": "0000000182e89014",
+                                      "module": "libsystem_kernel.dylib"
+                                  },
+                                  {
+                                      "file_path": "./m2048/Controller/M2SettingsViewController.m",
+                                      "source_context": [
+                                          {
+                                              "crashline": false,
+                                              "content": "",
+                                              "line": "58"
+                                          },
+                                          {
+                                              "crashline": false,
+                                              "content": "- (void)viewDidLoad",
+                                              "line": "59"
+                                          },
+                                          {
+                                              "crashline": false,
+                                              "content": "{",
+                                              "line": "60"
+                                          },
+                                          {
+                                              "crashline": true,
+                                              "content": "  strcpy(0,\"This is a bad bug\");",
+                                              "line": "61"
+                                          },
+                                          {
+                                              "crashline": false,
+                                              "content": "  [super viewDidLoad];",
+                                              "line": "62"
+                                          },
+                                          {
+                                              "crashline": false,
+                                              "content": "  self.navigationController.navigationBar.tintColor = [GSTATE scoreBoardColor];",
+                                              "line": "63"
+                                          },
+                                      ],
+                                      "process_frame": true,
+                                      "file_type": "objectivec",
+                                      "line": "62",
+                                      "filename": "M2SettingsViewController.m",
+                                      "function": "-[M2SettingsViewController viewDidLoad]",
+                                      "address": "00000001000c35a0",
+                                      "module": "m2048"
+                                  },
+                                  {
+                                      "process_frame": false,
+                                      "offset": "1036",
+                                      "function": "-[UIViewController loadViewIfRequired]",
+                                      "address": "0000000189fbdf9c",
+                                      "module": "UIKit"
+                                  },
+                                  {
+                                      "process_frame": false,
+                                      "offset": "28",
+                                      "function": "-[UIViewController view]",
+                                      "address": "0000000189fbdb78",
+                                      "module": "UIKit"
+                                  }
+                              ],
+                              "name": "",
+                              "number": "0",
+                              "title": "Thread 0 Crashed"
+                          },
+                          {
+                              "process_frame_indices": [],
+                              "frames": [
+                                  {
+                                      "process_frame": false,
+                                      "offset": "8",
+                                      "function": "__workq_kernreturn",
+                                      "address": "0000000182e89a88",
+                                      "module": "libsystem_kernel.dylib"
+                                  },
+                                  {
+                                      "process_frame": false,
+                                      "offset": "4",
+                                      "function": "start_wqthread",
+                                      "address": "0000000182f4ed7c",
+                                      "module": "libsystem_pthread.dylib"
+                                  }
+                              ],
+                              "name": "",
+                              "number": "1",
+                              "title": "Thread 1"
+                          }
+                      ]
+                  },
+                  "resolved_crash_report_string": "...",
+                  "has_logs": true,
+                  "metadata": {}
+              }
+          ]
+      }
+    }
+  ]
+}
+
+{% endmethod %}
