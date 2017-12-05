@@ -19,5 +19,9 @@
 .. link:deployment_groups/delete-testers.adoc[Remove testers]
 .. link:deployment_groups/post-deploy.adoc[Deploy build to testers]
 
+. link:feedback/README.adoc[Feedback]
+.. link:feedback/get-list.adoc[List feedback]
+.. link:feedback/get-logs.adoc[Show feedback logs]
+
 . link:misc/README.adoc[Miscellaneous]
 .. link:misc/get-ip_ranges.adoc[List buddybuild IP address ranges]

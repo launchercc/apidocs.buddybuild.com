@@ -1,0 +1,9 @@
+= Feedback
+
+This section covers the API methods for retrieving information about
+link:https://docs.buddybuild.com/sdk/feedback_reporter.html[feedback]
+received for your app through the buddybuild SDK:
+
+- link:get-list.adoc[List feedback]
+
+- link:get-logs.adoc[Show feedback logs]
