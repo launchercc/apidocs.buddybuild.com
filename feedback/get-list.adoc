@@ -1,0 +1,162 @@
+= List feedback
+:linkattrs:
+
+[#endpoint]
+----
+{
+  "base":     "\https://api.buddybuild.com/v1",
+  "endpoint": "/apps/:app_id:/feedback",
+  "method":   "get",
+  "params": {
+    "headers": [
+      {
+        "name": "Authorization",
+        "type": "Bearer :api-access-token:",
+        "req":  true,
+        "cue":  "Enter your API access token"
+      }
+    ],
+    "path":   [
+      {
+        "name": ":app_id:",
+        "type": "string",
+        "desc": 'App identifier',
+        "req":  true,
+        "cue":  'Enter an app id'
+      }
+    ],
+    "query":  [
+      {
+        "name": "pageSize",
+        "type": "number",
+        "desc": "Number of items to list (default: 10, max: 100)",
+        "req":  false,
+        "cue":  "Enter the number of items to list"
+      },
+      {
+        "name": "from",
+        "type": "string",
+        "desc": "Cursor used to list the next page of items",
+        "req":  false,
+        "cue":  "Enter a cursor identifier"
+      }
+    ],
+    "body":   []
+  },
+  "authentication": "required"
+}
+----
+
+== Definition
+
+[.definition.placeholder]
+Placeholder for the definition; auto-generated from JSON above.
+
+Use this method to retrieve a list of feedback received for an app.
+
+This method is paginated. By default, 10 items are returned in the
+response. You can request up to 100 items at a time using the `pageSize`
+query parameter.
+
+[NOTE]
+======
+**Looking for your API access token?**
+
+Read more about link:../index.adoc#authentication[authenticating with
+buddybuild] or show
+link:https://dashboard.buddybuild.com/account/access-token[your personal
+access token^].
+======
+
+{% method %}
+
+== Parameters
+
+Required = [req]`*`
+
+[.parameters.placeholder]
+Placeholder for the endpoint parameters; auto-generated from JSON above.
+
+{% sample lang="curl" %}
+
+[role=copyme]
+.curl
+[source,bash]
+curl -X GET \
+  -H 'Authorization: Bearer :api-access-token:' \
+  '\https://api.buddybuild.com/v1/apps/:app_id:/feedback'
+
+{% sample lang="jquery" %}
+
+[role=copyme]
+.jquery
+[source,js]
+----
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "\https://api.buddybuild.com/v1/apps/:app_id:/feedback/",
+  "method": "GET",
+  "headers": {
+    "authorization": "Bearer :api-access-token:"
+  }
+}
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+----
+
+{% common %}
+
+.Response
+[source,json]
+{
+  "items": [
+    {
+      "_id": "12375e17f924de000123143d",
+      "CFBundleIdentifier": "buddybuild.com.m2048",
+      "CFBundleShortVersionString": "1.2",
+      "CFBundleVersion": "90",
+      "app_id": "12335a067233a600012862eb",
+      "build_id": "12375a8c731fe400017fd69f",
+      "build_number": 90,
+      "created_at": "2017-11-23T23:47:35.145Z",
+      "description": "These elements are not aligned correctly.",
+      "email": "\john@buddybuild.com",
+      "has_logs": true,
+      "image_url": "\https://s3.amazonaws.com/buddybuild-screenshots/ab851500-510a-477e-be58-85b68784e1e8.jpg",
+      "system": {
+        "app_uptime": 335.26060700416565,
+        "battery_charging": false,
+        "battery_fully_charged": false,
+        "battery_level": 88,
+        "battery_state": 1,
+        "battery_state_friendly": "Unplugged",
+        "cellular_connection": "",
+        "device_plugged_into_power": true,
+        "disk_free": 209336,
+        "disk_total": 244080,
+        "disk_used": 34744,
+        "hardware_device_model": "iPhone",
+        "hardware_device_name": "John’s iPhone",
+        "hardware_device_type": "iPhone10,6",
+        "hardware_device_type_friendly": "iPhone X",
+        "hardware_screen_height": 568,
+        "hardware_screen_width": 320,
+        "hardware_system_name": "iOS",
+        "hardware_system_version": "11.1.2",
+        "memory_free": 132,
+        "memory_total": 1714,
+        "memory_used": 1582,
+        "network_3g": false,
+        "network_carrier": "",
+        "network_ip": "192.168.32.48",
+        "network_ssid": "",
+        "network_status": "Wifi",
+        "network_wifi": true
+      }
+    }
+  ]
+}
+
+{% endmethod %}
