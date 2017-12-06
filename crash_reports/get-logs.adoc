@@ -99,5 +99,9 @@ $.ajax(settings).done(function (response) {
 
 .Response
 [source,text]
+2017-12-05 13:45:17.043 m2048[6853:2673480] [BuddyBuildSDK] Crash reporting is enabled
+2017-12-05 13:45:17.045 m2048[6853:2673480] [BuddyBuildSDK] Crashed on 2017-12-05 21:45:13 +0000
+2017-12-05 13:45:17.048 m2048[6853:2673480] [BuddyBuildSDK] Starting video export
+2017-12-05 13:45:17.124 m2048[6853:2673480] [BuddyBuildSDK] Sending crash report Asynchronously
 
 {% endmethod %}
