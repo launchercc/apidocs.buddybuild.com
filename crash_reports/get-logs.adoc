@@ -1,4 +1,4 @@
-= Show feedback logs
+= Show crash report logs
 :linkattrs:
 
 [#endpoint]

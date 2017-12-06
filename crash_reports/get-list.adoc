@@ -114,7 +114,7 @@ $.ajax(settings).done(function (response) {
   "items": [
     {
       "_id": "12375e17f924de000123143d",
-      "instant_replay_url": "https://s3.amazonaws.com/buddybuild-instantreplays/d0e2a9e6-d212-45d2-b54a-96db7a68a820.mp4",
+      "instant_replay_url": "\https://s3.amazonaws.com/buddybuild-instantreplays/d0e2a9e6-d212-45d2-b54a-96db7a68a820.mp4",
       "scheme": "m2048",
       "system": {
         "battery_fully_charged": false,
@@ -195,7 +195,7 @@ $.ajax(settings).done(function (response) {
                   },
                   {
                     "crashline": true,
-                    "content": "  strcpy(0,\"This is a bad bug\");",
+                    "content": "  strcpy(0, 'This is a bad bug');",
                     "line": "61"
                   },
                   {
@@ -237,7 +237,6 @@ $.ajax(settings).done(function (response) {
             "title": "Thread 0 Crashed"
           },
           {
-            "process_frame_indices": [],
             "frames": [
               {
                 "process_frame": false,
