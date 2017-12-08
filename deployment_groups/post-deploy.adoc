@@ -5,7 +5,7 @@
 ----
 {
   "base":     "\https://api.buddybuild.com/v1",
-  "endpoint": "/:appID:/deployment-group/:deploymentTargetID:/deploy",
+  "endpoint": "/:appID:/deployment-groups/:deploymentTargetID:/deploy",
   "method":   "post",
   "params": {
     "headers": [
@@ -72,7 +72,7 @@ Placeholder for the endpoint parameters; auto-generated from JSON above.
 [source,bash]
 curl -X POST \
   -H 'Authorization: Bearer :api-access-token:' \
-  '\https://api.buddybuild.com/v1/apps/:appID:/deployment-group/:deploymentTargetID:/deploy' \
+  '\https://api.buddybuild.com/v1/apps/:appID:/deployment-groups/:deploymentTargetID:/deploy' \
   --data-urlencode "branch=master"
 
 {% sample lang="jquery" %}
@@ -84,7 +84,7 @@ curl -X POST \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "\https://api.buddybuild.com/v1/apps/:appID:/deployment-group/:deploymentTargetID:/deploy",
+  "url": "\https://api.buddybuild.com/v1/apps/:appID:/deployment-groups/:deploymentTargetID:/deploy",
   "method": "POST",
   "headers": {
     "authorization": "Bearer :api-access-token:"

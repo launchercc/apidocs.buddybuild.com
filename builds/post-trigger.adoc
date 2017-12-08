@@ -5,7 +5,7 @@
 ----
 {
   "base":     "\https://api.buddybuild.com/v1",
-  "endpoint": "/apps/:app_id:/build",
+  "endpoint": "/apps/:app_id:/builds",
   "method":   "post",
   "params": {
     "headers": [
@@ -77,7 +77,7 @@ Placeholder for the endpoint parameters; auto-generated from JSON above.
 [source,bash]
 curl -X POST \
   -H 'Authorization: Bearer :api-access-token:' \
-  '\https://api.buddybuild.com/v1/apps/:app_id:/build' \
+  '\https://api.buddybuild.com/v1/apps/:app_id:/builds' \
   --data-urlencode "branch=master"
 
 {% sample lang="jquery" %}
@@ -89,7 +89,7 @@ curl -X POST \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "\https://api.buddybuild.com/v1/apps/:app_id:/build",
+  "url": "\https://api.buddybuild.com/v1/apps/:app_id:/builds",
   "method": "POST",
   "data": {
     ":branch:",

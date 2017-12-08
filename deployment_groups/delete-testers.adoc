@@ -5,7 +5,7 @@
 ----
 {
   "base":     "\https://api.buddybuild.com/v1",
-  "endpoint": "/apps/:app_id:/deployment-group/:deployment_group_id:/testers",
+  "endpoint": "/apps/:app_id:/deployment-groups/:deployment_group_id:/testers",
   "method":   "delete",
   "params": {
     "headers": [
@@ -83,7 +83,7 @@ Placeholder for the endpoint parameters; auto-generated from JSON above.
 [source,bash]
 curl -X DELETE \
   -H 'Authorization: Bearer :api-access-token:' \
-  '\https://api.buddybuild.com/v1/apps/:app_id:/deployment-group/:deployment_group_id:/testers' \
+  '\https://api.buddybuild.com/v1/apps/:app_id:/deployment-groups/:deployment_group_id:/testers' \
   --data-urlencode "testers=\peter@buddybuild.com,\amy@buddybuild.com"
 
 {% sample lang="jquery" %}
@@ -95,7 +95,7 @@ curl -X DELETE \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "\https://api.buddybuild.com/v1/apps/:app_id:/deployment-group/:deployment_group_id:/testers",
+  "url": "\https://api.buddybuild.com/v1/apps/:app_id:/deployment-groups/:deployment_group_id:/testers",
   "method": "DELETE",
   "data": {
     "testers": "\peter@buddybuild.com,\amy@buddybuild.com"
