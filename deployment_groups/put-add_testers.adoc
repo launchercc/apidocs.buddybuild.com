@@ -5,7 +5,7 @@
 ----
 {
   "base":     "\https://api.buddybuild.com/v1",
-  "endpoint": "/apps/:app_id:/deployment-group/:deployment_group_id:/testers?deploy=true",
+  "endpoint": "/apps/:app_id:/deployment-group/:deployment_group_id:/testers",
   "method":   "put",
   "params": {
     "headers": [
