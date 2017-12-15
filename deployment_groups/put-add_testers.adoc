@@ -30,7 +30,9 @@
         "desc": 'Deployment group identifier',
         "req":  true,
         "cue":  'Enter a deployment group id'
-      },
+      }
+    ],
+    "query":  [
       {
         "name": ":deploy:",
         "type": "boolean",
@@ -39,7 +41,6 @@
         "cue": 'Set to "true" to deploy the build to the testers you\'ve added to the list.'
       }
     ],
-    "query":  [],
     "body":   [
       {
         "name": ":testers:",
@@ -102,6 +103,39 @@ var settings = {
   "async": true,
   "crossDomain": true,
   "url": "\https://api.buddybuild.com/v1/apps/:app_id:/deployment-group/:deployment_group_id:/testers",
+  "method": "PUT",
+  "data": {
+    "testers": "\peter@buddybuild.com,\amy@buddybuild.com"
+  },
+  "headers": {
+    "authorization": "Bearer :api-access-token:"
+  }
+}
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+----
+
+{% sample lang="curl" %}
+
+[role=copyme]
+.curl, with deploy
+[source,bash]
+curl -X PUT \
+  -H 'Authorization: Bearer :api-access-token:' \
+  '\https://api.buddybuild.com/v1/apps/:app_id:/deployment-group/:deployment_group_id:/testers?deploy=true' \
+  --data-urlencode "testers=\peter@buddybuild.com,\amy@buddybuild.com"
+
+{% sample lang="jquery" %}
+
+[role=copyme]
+.jquery, with deploy
+[source,js]
+----
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "\https://api.buddybuild.com/v1/apps/:app_id:/deployment-group/:deployment_group_id:/testers?deploy=true",
   "method": "PUT",
   "data": {
     "testers": "\peter@buddybuild.com,\amy@buddybuild.com"
