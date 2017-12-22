@@ -67,10 +67,10 @@
 [.definition.placeholder]
 Placeholder for the definition; auto-generated from JSON above.
 
-Use this method to list the most recent builds for the specified app.
-The number of results are limited to the 5 most recent builds by
-default, but you can request up to 100 builds using the `limit` query
-parameter.
+This method is paginated. By default, 10 items are returned in the
+response. You can request up to 100 items at a time using the `limit`
+query parameter.
+
 
 You can apply optional filters to the query:
 
