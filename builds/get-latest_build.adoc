@@ -5,7 +5,7 @@
 ----
 {
   "base":     "\https://api.buddybuild.com/v1",
-  "endpoint": "/apps/:app_id:/build/latest",
+  "endpoint": "/apps/:app_id:/builds/latest",
   "method":   "get",
   "params": {
     "headers": [
@@ -103,7 +103,7 @@ Placeholder for the endpoint parameters; auto-generated from JSON above.
 [source,bash]
 curl -X GET \
     -H 'Authorization: Bearer :api-access-token:' \
-    '\https://api.buddybuild.com/v1/apps/:app_id:/build/latest?branch=:branch_id:&scheme=:scheme:&status=:status:'
+    '\https://api.buddybuild.com/v1/apps/:app_id:/builds/latest?branch=:branch_id:&scheme=:scheme:&status=:status:'
 
 {% sample lang="jquery" %}
 
@@ -114,7 +114,7 @@ curl -X GET \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "\https://api.buddybuild.com/v1/apps/:app_id:/build/latest?branch=:branch_id:&scheme=:scheme:&status=:status:",
+  "url": "\https://api.buddybuild.com/v1/apps/:app_id:/builds/latest?branch=:branch_id:&scheme=:scheme:&status=:status:",
   "method": "GET",
   "headers": {
     "authorization": "Bearer :api-access-token:"

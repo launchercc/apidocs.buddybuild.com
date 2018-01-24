@@ -5,7 +5,7 @@
 ----
 {
   "base":     "\https://api.buddybuild.com/v1",
-  "endpoint": "/apps/:app_id:/feedback",
+  "endpoint": "/apps/:app_id:/feedbacks",
   "method":   "get",
   "params": {
     "headers": [
@@ -84,7 +84,7 @@ Placeholder for the endpoint parameters; auto-generated from JSON above.
 [source,bash]
 curl -X GET \
   -H 'Authorization: Bearer :api-access-token:' \
-  '\https://api.buddybuild.com/v1/apps/:app_id:/feedback'
+  '\https://api.buddybuild.com/v1/apps/:app_id:/feedbacks'
 
 {% sample lang="jquery" %}
 
@@ -95,7 +95,7 @@ curl -X GET \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "\https://api.buddybuild.com/v1/apps/:app_id:/feedback/",
+  "url": "\https://api.buddybuild.com/v1/apps/:app_id:/feedbacks/",
   "method": "GET",
   "headers": {
     "authorization": "Bearer :api-access-token:"
