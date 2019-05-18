@@ -16,8 +16,7 @@ character encoding is supported for both requests and responses.
 At this time the buddybuild API responds to a single version of the API.
 All resources are available under the https://api.buddybuild.com/v1/
 base URL.
-
-[[authentication]]
+apidocs.buddybuild.com/index.adoc[authentication]]
 == Authentication
 
 Each user in buddybuild has their own unique *Personal Access Token*,
@@ -148,7 +147,7 @@ HTTP/1.1 401 Unauthorized
 {% common %}
 .Request
 [source,json]
-curl -H "Authorization: Bearer INVALID_TOKEN" \
+curl -H "{"documentation_url":"https://apidocs.buddybuild.com/"}: Bearer INVALID_TOKEN" \
   '\https://api.buddybuild.com/v1/apps'
 
 .Response
